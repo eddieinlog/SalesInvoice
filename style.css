@@ -1,0 +1,315 @@
+html { 
+    font-family: Arial, sans-serif;
+    font-size: 10px; 
+    margin: 0; 
+    padding: 0;
+    background-color: lightgrey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* overflow: hidden; */
+}
+
+#top {
+    /* width: 210mm; */
+    height: 100px;
+    background-color: lightgrey;
+}
+
+#bottom {
+    /* width: 210mm; */
+    height: 100px;
+    background-color: lightgrey;
+}
+
+#content {
+    margin: 2.54cm;
+    /* margin: 90px; */
+    padding: 0;
+    min-width: 210mm;
+    max-width: 210mm;
+    min-height: 278.5mm;
+    max-height: 278.5mm;
+    background-color: white;
+    box-sizing: border-box;
+    /* overflow: hidden; */
+}
+
+h1 {
+    font-size: 4em;
+}
+
+h4 {
+    padding-left: 2px;
+}
+
+.invoiceHeader, .invoiceBody, .invoiceFooter { 
+    margin-bottom: 20px; 
+} 
+
+.invoiceHeader {
+    margin-bottom: 150px;
+}
+
+.invoiceHeaderRow {
+    margin: 0;
+    padding: 0;
+}
+
+#logoContainer {
+    margin-top: 20px;
+    width: 100px;
+    height: 100px;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#logoContainer img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Popup styling */
+.popup {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+    padding-top: 60px;
+}
+
+.popupContent {
+    background-color: #fefefe;
+    margin: 5% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* End popup styling */
+
+.invoiceHeaderText {
+    margin-right: 100px;
+}
+
+label.labelHeader {
+    font-family: inherit;
+    font-size: 1.2em;
+    border: 0px;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    margin-top: 2px;
+    margin-right: 2px;
+}
+
+input.inputHeader {
+    font-family: inherit;
+    font-size: 1.2em;
+    border: 0px;
+    cursor: pointer;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    margin-top: 2px;
+    line-height: 0;
+}
+
+input#inputPostcode {
+    width: 55px;
+    margin-right: 2px;
+}
+
+input.inputInvoiceTo {
+    font-family: inherit;
+    font-size: 1.2em;
+    border: 0px;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    margin-top: 2px;
+    padding-left: 3px;
+    line-height: 0;
+}
+
+.invoiceToRow {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+input#inputKlantPostcode {
+    width: 55px;
+    /* margin-left: -7px; */
+    margin-right: 2px;
+}
+
+.invoiceMetaData {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+input.inputInvoiceMetaData {
+    font-family: inherit;
+    font-size: 1em;
+    border: 0px;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    margin-top: 2px;
+    padding-left: 3px;
+}
+
+.invoiceTable { 
+    width: 100%;
+    /* border-collapse: collapse; */
+} 
+
+.invoiceTable th { 
+    background-color: #f2f2f2; 
+    border: 1px solid #ddd; 
+    padding: 8px; 
+} 
+
+.invoiceTable td { 
+    border: 1px solid #ddd; 
+} 
+
+.invoiceDescription {
+    width: 390px;
+}
+
+.invoiceDescriptionInput {
+    font: inherit;
+    width: 390px;
+    padding: 0;
+    margin: 0;
+}
+
+.invoiceQuantity {
+    width: 100px;
+}
+
+.invoiceQuantityInput {
+    font: inherit;
+    width: 100px;
+}
+
+.invoiceUnitPrice {
+    width: 100px;
+}
+
+.invoiceUnitPriceInput {
+    font: inherit;
+    width: 100px;
+}
+
+.invoiceVat {
+    width: 50px;
+}
+
+.invoiceVatInput {
+    font: inherit;
+    width: 50px;
+}
+
+.invoiceTotal {
+    width: 100px;
+}
+
+.totals {
+    margin-top: 10px;
+}
+
+.total {
+    display: block; 
+    margin: 0;
+    padding: 0; 
+    text-align: left;
+    margin-right: 10px;
+}
+
+.totalSpan {
+    min-width: 150px;
+    display: inline-block;
+}
+
+.totalValueSpan {
+    display: inline-block;
+    min-width: 65px;
+}
+
+#vat21Row, #vat9Row, #vat0Row {
+    display: none;
+}
+
+.staticVatValue {
+    display: none;
+}
+
+.invoiceEnclosure {
+    margin-top: 100px;
+}
+
+@page {
+    /* size: 210mm 297mm; Breedte x Hoogte voor A4-formaat  */
+    /* margin: 10mm; Optionele marge */
+    /* size: A4;
+    margin: 25px; */
+  }
+
+@media print { 
+    /* Verberg elementen die niet nodig zijn tijdens het afdrukken */ 
+    #addRowButton, .deleteRowButton, .actionButton, #printButton, .noPrint { 
+        display: none; 
+    }
+
+    .printNoBorder {
+        border: none;
+    }
+
+    th.invoiceDescription {
+        min-width: 390px;
+    }
+    
+    th.invoiceQuantity {
+        min-width: 100px;
+    }
+    
+    th.invoiceUnitPrice {
+        min-width: 100px;
+    }
+
+    th.invoiceVat {
+        min-width: 50px;
+    }
+    
+    th.invoiceTotal {
+        min-width: 100px;
+    }
+
+    .totalSpan {
+        min-width: 150px;
+    }
+}
+  

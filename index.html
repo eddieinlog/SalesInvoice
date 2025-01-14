@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Invoice Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="top" class="noPrint">
+        <ul>
+            <li></li>
+        </ul>
+        <p>
+            Vul in je eigen gegevens, klantgegevens, factuurgegevens, druk op afdrukken
+        </p>
+    </div>
+    <div id="content">
+        <section class="invoiceHeader">
+
+            <div class="float-start logo" id="logo">
+                <div id="logoContainer">Klik hier om een logo te uploaden</div>
+    
+                <!-- Popup Modal -->
+                <div id="popup" class="popup">
+                    <div class="popupContent">
+                        <span id="closePopup" class="close">&times;</span>
+                        <input type="file" id="logoInput" accept=".jpeg, .jpg, .png">
+                    </div>
+                </div>
+            </div>        
+            <div class="invoiceHeaderText text-center">
+                <h1>Verkoopfactuur</h1>
+            </div>         
+            <div class="invoiceHeaderInput float-end">
+                <div class="invoiceHeaderRow">
+                    <input type="text" class="inputHeader form-control" name="bedrijfsnaam" id="inputBedrijfsnaam" maxlength="150" placeholder="Bedrijfsnaam" />
+                </div> 
+                <div class="invoiceHeaderRow">
+                    <input type="text" class="inputHeader form-control" name="adres" id="inputAdres" maxlength="100" placeholder="Adres" />
+                </div>
+                <div class="invoiceHeaderRow d-flex">
+                    <input type="text" class="inputHeader form-control" name="postcode" id="inputPostcode" maxlength="6" placeholder="Postcode" />
+                    <input type="text" class="inputHeader form-control" name="plaatsnaam" id="inputPlaatsnaam" maxlength="100" placeholder="Plaatsnaam" />
+                </div>
+                <br>
+                <div class="invoiceHeaderRow d-flex">
+                    <label for="inputTelefoon" class="labelHeader" id="labelTelefoon">Tel:</label>
+                    <input type="text" class="inputHeader form-control" name="telefoon" id="inputTelefoon" maxlength="15" placeholder="Telefoon" />
+                </div>
+                <div class="invoiceHeaderRow d-flex">
+                    <label for="inputEmail" class="labelHeader" id="labelEmail">Email:</label>
+                    <input type="text" class="inputHeader form-control" name="email" id="inputEmail" maxlength="100" placeholder="Email" />
+                </div>
+                <div class="invoiceHeaderRow d-flex">
+                    <label for="inputIban" class="labelHeader" id="labelIban">IBAN:</label>
+                    <input type="text" class="inputHeader form-control" name="iban" id="inputIban" maxlength="34" placeholder="IBAN" />
+                </div>
+                <div class="invoiceHeaderRow d-flex">
+                    <label for="inputKvK" class="labelHeader" id="labelKvK">KvK:</label>
+                    <input type="text" class="inputHeader form-control" name="kvk" id="inputKvK" maxlength="8" placeholder="Kamer van Koophandel" />
+                </div>
+                <div class="invoiceHeaderRow d-flex">
+                    <label for="inputBTW" class="labelHeader" id="labelBTW">BTW:</label>
+                    <input type="text" class="inputHeader form-control" name="btw" id="inputBTW" maxlength="12" placeholder="BTW-nummer">
+                </div>
+            </div>            
+        </section> 
+        <section class="invoiceBody"> 
+            <div class="invoiceTo">
+                <h4><strong>Factuur aan:</strong></h4>
+                <div class="invoiceToRow row">
+                    <input type="text" class="inputInvoiceTo form-control" name="klantnaam" id="inputKlantnaam" maxlength="150" placeholder="Klantnaam" />
+                </div> 
+                <div class="invoiceToRow row">
+                    <input type="text" class="inputInvoiceTo form-control" name="klantAdres" id="inputKlantAdres" maxlength="100" placeholder="Klantadres" />
+                </div>
+                <div class="invoiceToRow col d-flex justify-content-center align-items-center">
+                    <input type="text" class="inputInvoiceTo form-control" name="klantPostcode" id="inputKlantPostcode" maxlength="6" placeholder="Postcode" />
+                    <input type="text" class="inputInvoiceTo form-control" name="klantPlaatsnaam" id="inputKlantPlaatsnaam" maxlength="100" placeholder="Plaatsnaam" />
+                </div>
+            </div> 
+            <br>
+            <div invoiceMetaData class="invoiceMetaData">
+                <div class="row">
+                    <div class="col">
+                        <label for="inputFactuurnummer" id="labelFactuurnummer"><strong>Factuurnummer:</strong></label>
+                        <input type="text" class="inputInvoiceMetaData" name="factuurnummer" id="inputFactuurnummer" maxlength="100" placeholder="Factuurnummer" value=""/>            
+                    </div>
+                    <div class="col">
+                        <label for="inputKlantnummer" id="labelKlantnummer"><strong>Klantnummer:</strong></label>
+                        <input type="text" class="inputInvoiceMetaData" name="klantnummer" id="inputKlantnummer" maxlength="100" placeholder="Klantnummer"/>
+                    </div>                    
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="inputFactuurdatum" id="labelFactuurdatum"><strong>Factuurdatum:</strong></label>
+                        <input type="date" class="inputInvoiceMetaData" name="factuurdatum" id="inputFactuurdatum" placeholder="Factuurdatum"/>
+                    </div>
+                    <div class="col">
+                        <label for="inputVervaldatum" id="labelVervaldatum"><strong>Vervaldatum:</strong></label>
+                        <input type="date" class="inputInvoiceMetaData" name="vervaldatum" id="inputVervaldatum" placeholder="Vervaldatum"/>
+                    </div>                
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="inputReference" id="labelReference"><strong>Referentie:</strong></label>
+                        <input type="text" class="inputInvoiceMetaData" name="reference" id="inputReference" placeholder="Referentie"/>
+                    </div>
+                    <div class="col">
+                    </div>                
+                </div>
+            </div>
+            
+            <div>
+                <table class="invoiceTable"> 
+                    <thead> 
+                        <tr> 
+                            <th class="invoiceDescription">Omschrijving</th> 
+                            <th class="invoiceQuantity">Hoeveelheid</th> 
+                            <th class="invoiceUnitPrice">Prijs per stuk (€)</th>
+                            <th class="invoiceVat">Btw %</th> 
+                            <th class="invoiceTotal">Totaal (€)</th>
+                        </tr> 
+                    </thead> 
+                    <tbody id="invoiceTableBody"> 
+                    </tbody> 
+                </table> 
+                <button type="button" class="btn btn-primary" id="addRowButton">Voeg factuurregel toe</button>
+            </div>        
+    
+            <div class="totals float-end">
+                <div class="total">
+                    <span class="totalSpan"><strong>Subtotaal (excl. BTW)</strong></span>
+                    <span><strong>: &euro;</strong></span>
+                    <span id="subTotalSpan" class="totalValueSpan">0,00</span>                  
+                </div> 
+                <div class="total" id="vatRow">
+                    <span class="totalSpan"><strong>Subtotaal BTW</strong></span>
+                    <span><strong>: &euro;</strong></span>
+                    <span id="vatTotalSpan" class="totalValueSpan">0,00</span> 
+                </div>               
+                <div class="total" id="vat21Row">
+                    <span class="totalSpan"><strong>Subtotaal 21% BTW </strong></span>
+                    <span><strong>: &euro;</strong></span>    
+                    <span id="vat21TotalSpan" class="totalValueSpan">0,00</span>
+                </div>
+                <div class="total" id="vat9Row">                   
+                    <span class="totalSpan"><strong>Subtotaal 9% BTW</strong></span>
+                    <span><strong>: &euro;</strong></span>
+                    <span id="vat9TotalSpan" class="totalValueSpan">0,00</span>
+                </div>
+                <div class="total" id="vat0Row">
+                    <span class="totalSpan"><strong>Subtotaal 0% BTW</strong></span>
+                    <span><strong>: &euro;</strong></span>
+                    <span id="vat0TotalSpan" class="totalValueSpan">0,00</span>
+                </div>
+                <div class="total">
+                    <span class="totalSpan"><strong>Totaal (incl. BTW)</strong></span> 
+                    <span><strong>: &euro;</strong></span>
+                    <span id="totalInclVatSpan" class="totalValueSpan">0,00</span>
+                </div>
+            </div> 
+    
+            <div class="invoiceEnclosure">
+                <p>
+                    Vriendelijk wordt verzocht om de factuur binnen de vervaldatum te betalen op rekeningnummer bovenaan de factuur onder vermelding van het factuurnummer.
+                </p>
+                <p>
+                    Heeft u nog vragen over deze factuur? Neem dan contact met ons op.
+                </p>
+            </div>
+    
+        </section> 
+        <section class="invoiceFooter text-center"> 
+            <button id="printButton" class="btn btn-primary">Afdrukken</button>
+        </section>
+    </div>
+    <div id="bottom" class="noPrint">
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="script.js" type="text/javascript" lang="js"></script>
+</body>
+</html>

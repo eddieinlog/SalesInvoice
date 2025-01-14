@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voeg Rij Toe</title>
+    <style>
+        .invoiceTable { 
+            width: 100%;
+            border-collapse: collapse; 
+            border: solid 1px black;
+        } 
+
+        .invoiceTable th { 
+            background-color: #f2f2f2; 
+            border: 1px solid #5e5d5d; 
+            padding: 8px; 
+        } 
+
+        .invoiceTable td { 
+            border: 1px solid #ddd; 
+        }
+
+        @media print {
+            .actionButton {
+                display: none;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    <table class="invoiceTable"> 
+        <thead> 
+            <tr> 
+                <th class="invoiceDescription">Omschrijving</th> 
+                <th class="invoiceQuantity">Hoeveelheid</th> 
+                <th class="invoiceUnitPrice">Prijs per stuk (€)</th>
+                <th class="invoiceVat">Btw %</th> 
+                <th class="invoiceTotal">Totaal (€)</th>
+                <th class="actionButton">Actie</th>
+            </tr> 
+        </thead> 
+        <tbody id="invoiceTableBody"> 
+        </tbody> 
+    </table> 
+    <button type="button" id="addRowButton">Voeg rij toe</button>
+
+    <script>
+
+    </script>
+</body>
+</html>
