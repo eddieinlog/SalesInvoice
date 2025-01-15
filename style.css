@@ -12,8 +12,21 @@ html {
 
 #top {
     /* width: 210mm; */
-    height: 100px;
+    height: 250px;
+    width: 100%;
     background-color: lightgrey;
+    display: flex;   
+    justify-content: center;
+}
+
+.instructions {
+    background-color: white;
+    font-size: 1.5em;
+    padding: 1px;
+    margin-top: 20px;
+    border-radius: 5px;
+    height: 150px;
+    width: 400px;
 }
 
 #bottom {
@@ -51,9 +64,14 @@ h4 {
     margin-bottom: 150px;
 }
 
+.invoiceHeaderInput {
+    margin-top: 20px;
+}
+
 .invoiceHeaderRow {
     margin: 0;
     padding: 0;
+    width: 250px;
 }
 
 #logoContainer {
@@ -180,6 +198,18 @@ input.inputInvoiceMetaData {
     padding-left: 3px;
 }
 
+input#inputFactuurnummer {
+    width: 250px;
+}
+
+input#inputKlantnummer {
+    width: 250px;
+}
+
+input#inputReference {
+    width: 250px;
+}
+
 .invoiceTable { 
     width: 100%;
     /* border-collapse: collapse; */
@@ -271,6 +301,10 @@ input.inputInvoiceMetaData {
     margin-top: 100px;
 }
 
+input:hover {
+    background-color: #f2f2f2;
+}
+
 @page {
     /* size: 210mm 297mm; Breedte x Hoogte voor A4-formaat  */
     /* margin: 10mm; Optionele marge */
@@ -280,7 +314,7 @@ input.inputInvoiceMetaData {
 
 @media print { 
     /* Verberg elementen die niet nodig zijn tijdens het afdrukken */ 
-    #addRowButton, .deleteRowButton, .actionButton, #printButton, .noPrint { 
+    #addRowButton, .deleteRowButton, .actionButton, #printButton, #top, #bottom { 
         display: none; 
     }
 

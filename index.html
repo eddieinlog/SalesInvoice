@@ -9,13 +9,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="top" class="noPrint">
-        <ul>
-            <li></li>
-        </ul>
-        <p>
-            Vul in je eigen gegevens, klantgegevens, factuurgegevens, druk op afdrukken
-        </p>
+    <div id="top">
+        <div class="instructions">
+            <ul>
+                <li>Voeg je logo toe</li>
+                <li>Vul je bedrijfsgegevens in</li>
+                <li>Voer de gegevens van de klant in</li>
+                <li>Vul de factuurgegevens in</li>
+                <li>Voeg factuurregels toe </li>
+                <li>Druk op afdrukken om bijvoorbeeld een pdf te maken </li>
+            </ul>
+        </div>
     </div>
     <div id="content">
         <section class="invoiceHeader">
@@ -42,7 +46,7 @@
                     <input type="text" class="inputHeader form-control" name="adres" id="inputAdres" maxlength="100" placeholder="Adres" />
                 </div>
                 <div class="invoiceHeaderRow d-flex">
-                    <input type="text" class="inputHeader form-control" name="postcode" id="inputPostcode" maxlength="6" placeholder="Postcode" />
+                    <input type="text" class="inputHeader form-control" name="postcode" id="inputPostcode" maxlength="7" placeholder="Postcode" />
                     <input type="text" class="inputHeader form-control" name="plaatsnaam" id="inputPlaatsnaam" maxlength="100" placeholder="Plaatsnaam" />
                 </div>
                 <br>
@@ -78,7 +82,7 @@
                     <input type="text" class="inputInvoiceTo form-control" name="klantAdres" id="inputKlantAdres" maxlength="100" placeholder="Klantadres" />
                 </div>
                 <div class="invoiceToRow col d-flex justify-content-center align-items-center">
-                    <input type="text" class="inputInvoiceTo form-control" name="klantPostcode" id="inputKlantPostcode" maxlength="6" placeholder="Postcode" />
+                    <input type="text" class="inputInvoiceTo form-control" name="klantPostcode" id="inputKlantPostcode" maxlength="7" placeholder="Postcode" />
                     <input type="text" class="inputInvoiceTo form-control" name="klantPlaatsnaam" id="inputKlantPlaatsnaam" maxlength="100" placeholder="Plaatsnaam" />
                 </div>
             </div> 
@@ -87,11 +91,11 @@
                 <div class="row">
                     <div class="col">
                         <label for="inputFactuurnummer" id="labelFactuurnummer"><strong>Factuurnummer:</strong></label>
-                        <input type="text" class="inputInvoiceMetaData" name="factuurnummer" id="inputFactuurnummer" maxlength="100" placeholder="Factuurnummer" value=""/>            
+                        <input type="text" class="inputInvoiceMetaData" name="factuurnummer" id="inputFactuurnummer" maxlength="25" placeholder="Factuurnummer" value=""/>            
                     </div>
                     <div class="col">
                         <label for="inputKlantnummer" id="labelKlantnummer"><strong>Klantnummer:</strong></label>
-                        <input type="text" class="inputInvoiceMetaData" name="klantnummer" id="inputKlantnummer" maxlength="100" placeholder="Klantnummer"/>
+                        <input type="text" class="inputInvoiceMetaData" name="klantnummer" id="inputKlantnummer" maxlength="25" placeholder="Klantnummer"/>
                     </div>                    
                 </div>
                 <div class="row">
@@ -107,7 +111,7 @@
                 <div class="row">
                     <div class="col">
                         <label for="inputReference" id="labelReference"><strong>Referentie:</strong></label>
-                        <input type="text" class="inputInvoiceMetaData" name="reference" id="inputReference" placeholder="Referentie"/>
+                        <input type="text" class="inputInvoiceMetaData" name="reference" id="inputReference" maxlength="30" placeholder="Referentie"/>
                     </div>
                     <div class="col">
                     </div>                
@@ -178,7 +182,7 @@
             <button id="printButton" class="btn btn-primary">Afdrukken</button>
         </section>
     </div>
-    <div id="bottom" class="noPrint">
+    <div id="bottom">
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="script.js" type="text/javascript" lang="js"></script>
